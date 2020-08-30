@@ -27,7 +27,9 @@ public class SqServlet extends HttpServlet{
 		}
 		
 		k*=k;
+		out.println("<html><body bgcolor = 'cyan'>");
 		out.println("Sum Square = "+k);
+		
 		
 		ServletContext ctx = req.getServletContext();
 		String str = ctx.getInitParameter("name");
@@ -36,5 +38,6 @@ public class SqServlet extends HttpServlet{
 		ServletConfig cfg = getServletConfig();
 		String place = cfg.getInitParameter("place");
 		out.println(place);
+		out.println("</body></html>");
 	}
 }
