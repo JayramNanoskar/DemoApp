@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.sun.media.sound.RealTimeSequencerProvider;
+import com.sun.org.apache.xpath.internal.patterns.ContextMatchStepPattern;
 
 public class AddServlet extends HttpServlet
 {
@@ -26,7 +28,12 @@ public class AddServlet extends HttpServlet
 		Cookie cookie = new Cookie("k", k+"");
 		res.addCookie(cookie);
 		
+		ServletContext ctx = req.getServletContext();
+		String str = ctx.getInitParameter("name");
+		System.out.println(str);
+		
 		res.sendRedirect("sq");
+		
 		
 	}
 }

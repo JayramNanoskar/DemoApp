@@ -3,6 +3,8 @@ package com.jayram;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,5 +25,13 @@ public class SqServlet extends HttpServlet{
 		
 		k*=k;
 		out.println("Sum Square = "+k);
+		
+		ServletContext ctx = req.getServletContext();
+		String str = ctx.getInitParameter("name");
+		out.println(str);
+		
+		ServletConfig cfg = getServletConfig();
+		String place = cfg.getInitParameter("place");
+		out.println(place);
 	}
 }

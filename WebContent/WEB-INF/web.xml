@@ -3,6 +3,10 @@
   <servlet>
   	<servlet-name>abc</servlet-name>
   	<servlet-class>com.jayram.AddServlet</servlet-class>
+  	<init-param>
+  		<param-name>place</param-name>
+  		<param-value>palghar</param-value>
+  	</init-param>
   </servlet>
   <servlet-mapping>
   	<servlet-name>abc</servlet-name>
@@ -12,9 +16,22 @@
   <servlet>
   	<servlet-name>pqr</servlet-name>
   	<servlet-class>com.jayram.SqServlet</servlet-class>
+  	<init-param>
+  		<param-name>place</param-name>
+  		<param-value>boisar</param-value>
+  	</init-param>
   </servlet>
   <servlet-mapping>
   	<servlet-name>pqr</servlet-name>
   	<url-pattern>/sq</url-pattern>
   </servlet-mapping>
+  
+  <context-param>
+  	<param-name>name</param-name>
+  	<param-value>jayram</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>place</param-name>
+  	<param-value>mumbai</param-value>
+  </context-param>
 </web-app>
